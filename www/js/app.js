@@ -24,9 +24,10 @@ angular.module('starter', ['ionic', 'firebase', 'ngCordova'])
     var usersRef = new Firebase(endPoint);
 
     return $firebaseAuth(usersRef);
+
 })
 
-.controller('Controller', function($scope, Auth, $cordovaBarcodeScanner) {
+.controller('Controller', function($scope, Auth, $cordovaBarcodeScanner, $http) {
 
     Auth.$onAuth(function (authData) {
         if (authData === null) {
@@ -41,7 +42,7 @@ angular.module('starter', ['ionic', 'firebase', 'ngCordova'])
 
     $scope.login = function (authMethod) {
         Auth.$authWithOAuthRedirect(authMethod).then(function(authData){
-
+            console.log("face", authData);
         }).catch(function(error) {
             if (error.code === 'TRANSPORT_UNAVAILABLE') {
                 Auth.$authWithOAuthPopup(authMethod).then(function (authData) {});
@@ -52,9 +53,15 @@ angular.module('starter', ['ionic', 'firebase', 'ngCordova'])
     };
 
     $scope.ler = function () {
-        alert('vai ler!');
+
         $cordovaBarcodeScanner.scan().then(function (imagemEscaneada) {
-            alert(imagemEscaneada.text);
+            $http.get("https://upcompras.herokuapp.com/product/"+imagemEscaneada.text, {}).then(function (response) {
+
+                alert(response.data.descricao + " - " + response.data.embalagem);
+            }, function () {
+                alert('Algum erro ocorreu: ');
+            })
+
         }, function (error) {
             alert('Algum erro ocorreu: ', error);
         });
