@@ -1,0 +1,84 @@
+<html ng-app="starter">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title></title>
+
+        <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+        -->
+
+        <!-- ionic/angularjs js -->
+        <script src="../lib/ionic/js/ionic.bundle.js"></script>
+
+        <!--    Meus imports   -->
+        <script src="../lib/firebase/firebase.js"></script>
+        <script src="../lib/angularfire/dist/angularfire.min.js"></script>
+        <script src="../lib/ngCordova/dist/ng-cordova.js"></script>
+
+
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="cordova.js"></script>
+
+        <!-- your app's js -->
+        <script src="../js/app.js"></script>
+
+        <style type="text/css">
+            .mix{
+                background-color: #387EF5;
+                height: 2px;
+                margin-bottom: 15px;
+            }
+
+            .porcentagem{
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <ion-pane>
+        <div class="list list-inset">
+              <label class="item item-input">
+                Melhores mix para sua lista
+            </label>
+        </div>
+
+        <div class="list">
+
+            <a class="item item-avatar" href="comprar.html">
+              <img src="venkman.jpg">
+                <label>Supermercado descontão</label>
+              <div class="mix" style="width: 93%;"><span class="porcentagem">95%</span></div>
+              <div class="preco">R$ 101.25</div>
+            </a>
+            <a class="item item-avatar" href="comprar.html">
+              <img src="venkman.jpg">
+                <label>Supermercado precinho</label>
+              <div class="mix" style="width: 87%;"><span class="porcentagem">89%</span></div>
+              <div class="preco">R$ 91.05</div>
+            </a>
+            <a class="item item-avatar" href="comprar.html">
+              <img src="venkman.jpg">
+                <label>Supermercado de Campina</label>
+              <div class="mix" style="width: 75%;"><span class="porcentagem">82%</span></div>
+              <div class="preco">R$ 90.46</div>
+            </a>
+            <a class="item item-avatar" href="comprar.html">
+              <img src="venkman.jpg">
+                <label>Supermercado da prata</label>
+              <div class="mix" style="width: 71%;"><span class="porcentagem">71%</span></div>
+              <div class="preco">R$ 77.90</div>
+            </a>
+            <a class="item item-avatar" href="comprar.html">
+              <img src="venkman.jpg">
+                <label>Supermercado da dona de casa</label>
+              <div class="mix" style="width: 59%;"><span class="porcentagem">63%</span></div>
+              <div class="preco">R$ 63.10</div>
+            </a>
+
+        </div>
+        </ion-pane>
+    </body>
+</html>

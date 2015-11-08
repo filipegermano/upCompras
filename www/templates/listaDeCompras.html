@@ -1,0 +1,219 @@
+<html ng-app="starter">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title></title>
+
+        <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+
+        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+        -->
+
+        <!-- ionic/angularjs js -->
+        <script src="../lib/ionic/js/ionic.bundle.js"></script>
+
+        <!--    Meus imports   -->
+        <script src="../lib/firebase/firebase.js"></script>
+        <script src="../lib/angularfire/dist/angularfire.min.js"></script>
+        <script src="../lib/ngCordova/dist/ng-cordova.js"></script>
+
+
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="cordova.js"></script>
+
+        <!-- your app's js -->
+        <script src="../js/app.js"></script>
+
+        <style type="text/css">
+
+            .nome{
+                width: 35%;
+            }
+
+            .preco{
+                width: 50%;
+            }
+
+            .menor{
+                color: #33CD5F;
+            }
+
+            .maior{
+                color: #EF473A;
+            }
+
+            .input-qtde{
+                width: 5%;
+            }
+
+            .button-small{
+                margin-left: 5px;
+            }
+
+            .lb-total{
+                width: 93%;
+            }
+            .total{
+                background-color: #387EF5;
+            }
+        </style>
+    </head>
+    <body>
+        <ion-pane>
+
+            <div class="list list-inset">
+              <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Pesquisar">
+              </label>
+            </div>
+            <div class="list minha-lista">
+
+              <a class="item item-input-inset">
+                <label class="nome">
+                    Arroz tio urbano 1kg
+                </label>
+                <label class="preco">
+                    Preço <span class="menor">R$ 2.46</span> - <span class="maior">R$ 3.25</span>
+                </label>
+                <input type="text" class="input-qtde" placeholder="3">
+                <button class="button button-small">
+                  -
+                </button>
+                <button class="button button-small">
+                  +
+                </button>
+              </a>
+
+              <a class="item item-input-inset">
+                <label class="nome">
+                    Molho de tomate quero 270gm
+                </label>
+                <label class="preco">
+                    Preço <span class="menor">R$ 2.10</span> - <span class="maior">R$ 2.45</span>
+                </label>
+                <input type="text" class="input-qtde" placeholder="5">
+                <button class="button button-small">
+                  -
+                </button>
+                <button class="button button-small">
+                  +
+                </button>
+              </a>
+
+              <a href="ofertas.html" class="item item-input-inset">
+                <label class="nome">
+                    Macarrão parafuso fortaleza
+                </label>
+                <label class="preco">
+                    Preço <span class="menor">R$ 3.15</span> - <span class="maior">R$ 4.00</span>
+                </label>
+
+                <input type="text" class="input-qtde" placeholder="2">
+                <button class="button button-small">
+                  -
+                </button>
+                <button class="button button-small">
+                  +
+                </button>
+              </a>
+
+              <a class="item item-input-inset">
+                <label class="nome">
+                    Linguiça aurora (kg)
+                </label>
+                <label class="preco">
+                    Preço <span class="menor">R$ 6.70</span> - <span class="maior">R$ 8.25</span>
+                </label>
+
+                <input type="text" class="input-qtde" placeholder="2">
+                <button class="button button-small">
+                  -
+                </button>
+                <button class="button button-small">
+                  +
+                </button>
+              </a>
+
+              <a class="item item-input-inset">
+                <label class="nome">
+                    Café Santa Clara 250gm
+                </label>
+                <label class="preco">
+                    Preço <span class="menor">R$ 2.46</span> - <span class="maior">R$ 3.25</span>
+                </label>
+
+                <input type="text" class="input-qtde" placeholder="6">
+                <button class="button button-small">
+                  -
+                </button>
+                <button class="button button-small">
+                  +
+                </button>
+              </a>
+
+             <a class="item item-input-inset">
+                <label class="nome">
+                    Sabão Omo 500gm
+                </label>
+                <label class="preco">
+                    Preço <span class="menor">R$ 5.46</span> - <span class="maior">R$ 7.25</span>
+                </label>
+
+                <input type="text" class="input-qtde" placeholder="1">
+                <button class="button button-small">
+                  -
+                </button>
+                <button class="button button-small">
+                  +
+                </button>
+              </a>
+
+            <a class="item item-input-inset">
+                <label class="nome">
+                    Detergente minuano
+                </label>
+                <label class="preco">
+                    Preço <span class="menor">R$ 2.46</span> - <span class="maior">R$ 3.25</span>
+                </label>
+                <input type="text" class="input-qtde" placeholder="3">
+                <button class="button button-small">
+                  -
+                </button>
+                <button class="button button-small">
+                  +
+                </button>
+            </a>
+
+              <a class="item item-input-inset">
+                <label class="nome">
+                    Desinfetente Urca floral 2L
+                </label>
+
+                <label class="preco">
+                    Preço <span class="menor">R$ 2.46</span> - <span class="maior">R$ 3.25</span>
+                  </label>
+                <input type="text" class="input-qtde" placeholder="1">
+
+                <button class="button button-small">
+                  -
+                </button>
+                <button class="button button-small">
+                  +
+                </button>
+              </a>
+
+                <a class="item item-input-inset total">
+                    <label class="lb-total">Total: </label>
+                    <label style=" float:right;">R$ 87.30</label>
+                </a>
+
+
+                <a href="listaDeSupermercados.html" class="button button-full button-balanced">
+                    Comprar
+                </a>
+        </ion-pane>
+    </body>
+</html>

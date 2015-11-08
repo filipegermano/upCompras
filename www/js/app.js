@@ -55,7 +55,7 @@ angular.module('starter', ['ionic', 'firebase', 'ngCordova'])
     $scope.ler = function () {
 
         $cordovaBarcodeScanner.scan().then(function (imagemEscaneada) {
-            $http.get("https://upcompras.herokuapp.com/product/"+imagemEscaneada.text, {}).then(function (response) {
+            $http.get("https://upcompras.herokuapp.com/produto/"+imagemEscaneada.text, {}).then(function (response) {
 
                 alert(response.data.descricao + " - " + response.data.embalagem);
             }, function () {
